@@ -124,7 +124,7 @@ static int snd_rawmidi_hw_params(snd_rawmidi_t *rmidi, snd_rawmidi_params_t * pa
 		size_t alloc_size;
 		void *buf;
 
-		alloc_size = page_size();
+		alloc_size = alsa_page_size();
 		if (params->buffer_size > alloc_size)
 			alloc_size = params->buffer_size;
 		if (alloc_size != hw->buf_size) {

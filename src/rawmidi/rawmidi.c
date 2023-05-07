@@ -160,7 +160,7 @@ static int snd_rawmidi_params_default(snd_rawmidi_t *rawmidi, snd_rawmidi_params
 {
 	assert(rawmidi);
 	assert(params);
-	params->buffer_size = page_size();
+	params->buffer_size = alsa_page_size();
 	params->avail_min = 1;
 	params->no_active_sensing = 1;
 	params->mode = 0;

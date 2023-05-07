@@ -5810,7 +5810,7 @@ static void _snd_config_end(void)
 }
 #endif
 
-size_t page_size(void)
+size_t alsa_page_size(void)
 {
 	long s = sysconf(_SC_PAGE_SIZE);
 	assert(s > 0);
@@ -5820,7 +5820,7 @@ size_t page_size(void)
 size_t page_align(size_t size)
 {
 	size_t r;
-	long psz = page_size();
+	long psz = alsa_page_size();
 	r = size % psz;
 	if (r)
 		return size + psz - r;
@@ -5830,7 +5830,7 @@ size_t page_align(size_t size)
 size_t page_ptr(size_t object_offset, size_t object_size, size_t *offset, size_t *mmap_offset)
 {
 	size_t r;
-	long psz = page_size();
+	long psz = alsa_page_size();
 	assert(offset);
 	assert(mmap_offset);
 	*mmap_offset = object_offset;

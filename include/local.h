@@ -242,7 +242,7 @@ typedef enum _snd_set_mode {
 } snd_set_mode_t;
 
 size_t page_align(size_t size);
-size_t page_size(void);
+size_t alsa_page_size(void);
 size_t page_ptr(size_t object_offset, size_t object_size, size_t *offset, size_t *mmap_offset);
 
 #define safe_strtoll_base _snd_safe_strtoll_base

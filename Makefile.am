@@ -8,7 +8,7 @@ if BUILD_MODULES
 SUBDIRS += modules
 endif
 if BUILD_PCM_PLUGIN_SHM
-SUBDIRS += aserver
+SUBDIRS +=
 endif
 if BUILD_MIXER
 if BUILD_ALISP
